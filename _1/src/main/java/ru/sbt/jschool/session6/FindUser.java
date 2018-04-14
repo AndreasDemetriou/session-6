@@ -10,6 +10,8 @@ public class FindUser implements Action {
         String[] mas = s.split("[/\\=\\&\\?]");
         int id = Integer.parseInt(mas[2]);
         String filename = folder + "//" + id + ".dat";
+        if(Server.getUserById(id, filename) == null) return null;
+        else
         return JsonObject.toJson(Server.getUserById(id, filename));
     }
 }
