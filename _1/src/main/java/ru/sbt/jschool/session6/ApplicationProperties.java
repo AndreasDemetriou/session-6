@@ -3,10 +3,11 @@ package ru.sbt.jschool.session6;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class GetProp {
+public class ApplicationProperties {
     String path;
     Properties prop;
-    GetProp(String path){
+
+    ApplicationProperties(String path) {
         this.path = path;
         FileInputStream fileInputStream;
         prop = new Properties();
@@ -17,10 +18,12 @@ public class GetProp {
             e.printStackTrace();
         }
     }
-    public int getPort(){
+
+    public int getPort() {
         return Integer.parseInt(prop.getProperty("port"));
     }
-    public String getFolfder(){
+
+    public String getFolfder() {
         return prop.getProperty("folder");
     }
 }
